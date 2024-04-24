@@ -1,0 +1,26 @@
+{
+    "data": [
+      {
+        "remboursement":"dec 23",
+        "prix":72,
+        "montant":55.44,
+        "date":"4/26/2024",
+        "name":"Jane",
+        "last_name":"Doe",
+        "email":"janedoe@example.com",
+        "adress":"adress2 example 123",
+        "soin":"visage"
+      },
+      {
+        "remboursement":"dec 23",
+        "prix":72,
+        "montant":55.44,
+        "date":"1/16/2024",
+        "name":"Jon",
+        "last_name":"Doe",
+        "email":"jondoe@example.com",
+        "adress":"adress example 123",
+        "soin":"visage"
+      }
+    ]
+}

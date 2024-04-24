@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "product_name": "iPhone 14 Pro",
+      "category": 2,
+      "ref": 124,
+      "info": "Super Retina XDR display footnote Pro Motion technology",
+      "price": "€999",
+      "images": [
+        "product-1.png",
+        "product-2.png",
+        "product-3.png"
+      ],
+      "status": 3,
+      "image": "product-1.png",
+      "product_brand": "Super Retina XDR display footnote Pro Motion technology",
+      "institut_nom":"Exemple Institut 9",
+      "institut_id": 1
+    },
+    {
+      "id": 2,
+      "product_name": "Echo Dot (4th Gen)",
+      "category": 2,
+      "ref": 450,
+      "info": "Echo Dot Smart speaker with Alexa",
+      "price": "€25.50",
+      "images": [
+        "product-1.png",
+        "product-2.png",
+        "product-3.png"
+      ],
+      "status": 2,
+      "image": "product-2.png",
+      "product_brand": "Echo Dot Smart speaker with Alexa",
+      "institut_nom":"Exemple Institut 8",
+      "institut_id": 2
+    }
+  ]
+}
