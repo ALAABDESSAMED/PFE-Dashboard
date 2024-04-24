@@ -42,34 +42,39 @@ $(function () {
       columns: [
         // columns according to JSON
         { data: '' },
+        { data: '' },
         { data: 'id' },
-        { data: 'offre_Name' },
+        { data: 'offre_name' },
         { data: 'voice' },
         { data: 'data' },
         { data: 'sms' },
         { data: 'prix' },
-        { data: 'images' },
         { data: 'description' },
-        { data: 'dategories_client'},
-        { data: 'produits_disponible'},
+        { data: 'categories_client'},
         { data: '' }
       ],
       columnDefs: [
         {
-          // For Responsive
           className: 'control',
-          searchable: false,
           orderable: false,
-          responsivePriority: 2,
           targets: 0,
           render: function (data, type, full, meta) {
             return '';
           }
         },
+        {
+          // For Checkboxes
+          targets: 1,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          },
+          responsivePriority: 4
+        },
         
-        
-        
-         
         {
           // Actions
           targets: -1,
@@ -77,7 +82,7 @@ $(function () {
           searchable: false,
           orderable: false,
           render: function (data, type, full, meta) {
-            var $ref = full['ref'];
+            var $ref = full['id'];
             return (
               '<div class="d-inline-block text-nowrap">' +
   '<a href="./edit.html?id='+$ref+'" class="btn btn-sm btn-icon"><i class="ti ti-edit"></i></a href="./edit?id='+full['id']+'">' +
@@ -261,7 +266,7 @@ $(function () {
           ]
         },
         {
-          text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">Ajouter Produit</span>',
+          text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">Ajouter Offre</span>',
           className: 'add-new btn btn-primary ms-2 ms-sm-0',
           action: function () {
             window.location.href = productAdd;
@@ -301,65 +306,7 @@ $(function () {
           }
         }
       },
-      initComplete: function () {
-        // Adding status filter once table initialized
-        this.api()
-          .columns(-2)
-          .every(function () {
-            var column = this;
-            var select = $(
-              '<select id="ProductStatus" class="form-select text-capitalize"><option value="">Status</option></select>'
-            )
-              .appendTo(".product_status")
-              .on("change", function () {
-                var val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? "^" + val + "$" : "", true, false).draw();
-              });
-
-            column
-              .data()
-              .unique()
-              .sort()
-              .each(function (d, j) {
-                select.append(
-                  '<option value="' +
-                    statusObj[d].title +
-                    '">' +
-                    statusObj[d].title +
-                    "</option>"
-                );
-              });
-          });
-        // Adding category filter once table initialized
-        this.api()
-        .columns(-2)
-        .every(function () {
-          var column = this;
-          var select = $(
-            '<select id="FilterTransaction" class="form-select text-capitalize"><option value=""> Select Status </option></select>'
-          )
-            .appendTo('.institut-filter')
-            .on('change', function () {
-              var val = $.fn.dataTable.util.escapeRegex($(this).val());
-              column.search(val ? '^' + val + '$' : '', true, false).draw();
-            });
-
-          column
-            .data()
-            .unique()
-            .sort()
-            .each(function (d, j) {
-              select.append(
-                '<option value="' +
-                  statusObj[d].title +
-                  '" class="text-capitalize">' +
-                  statusObj[d].title +
-                  '</option>'
-              );
-            });
-        });
-        
-      }
+     
     });
     $('.dataTables_length').addClass('mt-2 mt-sm-0 mt-md-3 me-2');
     $('.dt-buttons').addClass('d-flex flex-wrap');
@@ -397,9 +344,9 @@ $(function () {
 
 
 
-  $('#search-partenaire').on('keyup', function () {
-    dt_products.column(9).search(this.value).draw();
-  });
+  // $('#search-partenaire').on('keyup', function () {
+  //   dt_products.column(9).search(this.value).draw();
+  // });
   // Delete Record
   $(document).on('click', '.delete-record', function () {
     var row = $(this).closest('tr');

@@ -1,0 +1,24 @@
+{
+    "data": [
+      {
+        "id":"1",
+        "offre_name":"3ejaj" ,
+        "voice":"50Mil/Min",
+        "data":"100Gg/50D",
+        "sms":"100Sms/gratuit",
+        "prix":"20 dt " ,
+        "description":"Harry Potter [ʔaʁi pɔtœʁ] est une série littéraire de low fantasy écrite par l'auteure britannique J. K. Rowling, dont la suite romanesqu",
+        "categories_client":"Student "
+      },
+      {
+        "id":"2",
+        "offre_name":"Habelnii" ,
+        "voice":"50Mil/Min",
+        "data":"100Gg/50D",
+        "sms":"100Sms/gratuit",
+        "prix":"20 dt " ,
+        "description":"Harry Potter [ʔaʁi pɔtœʁ] est une série littéraire de low fantasy écrite par l'auteure britannique J. K. Rowling, dont la suite romanesqu",
+        "categories_client":"Student "
+      }
+    ]
+}
